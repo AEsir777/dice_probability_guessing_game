@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+    color: rgb(230, 244, 248);
+    text-shadow: 0 0 .2rem #48c9e9,
+        0 0 0.1rem #99c6ce,
+        0 0 0.1rem #c4d9dd,
+        0 0 0.1rem #d6e8ec;
+    text-align: center;
+}
+
+h1:hover {background-color: #323235}
+
+.neonBorder {
+    margin: 4rem 10rem;
+    padding: 0.4rem;
+    border: 0.2rem solid #72e9e9;
+    box-shadow: 0 0 .2rem #aae4f3,
+            0 0 .2rem #5db1e2,
+            0 0 2rem #99c6ce,
+            0 0 0.8rem #c4d9dd,
+            0 0 2.8rem #d6e8ec,
+            inset 0 0 0.1rem #99cfe9; 
+    color: rgb(230, 240, 243);
+    border-radius: 2rem;
+}
+
+button.neonBorder{
+    display: none;
+    width: 10%;    
+    margin: 0% 45%;
+    border-radius: 2rem;
+    background-color: black;
+    color: rgb(230, 244, 248);
+    text-shadow: 0 0 .2rem #48c9e9,
+        0 0 0.1rem #99c6ce,
+        0 0 0.1rem #c4d9dd,
+        0 0 0.1rem #d6e8ec;
+    font-size: 1.2rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dice-img{
+    display: flex;
+    width: 70%;
+    padding: 2% 15%;
+}
+
+/* .grid-item{
+    display: inline-flex;
+} */
