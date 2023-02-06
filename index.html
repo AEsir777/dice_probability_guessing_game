@@ -8,7 +8,7 @@
 </head>
 <body>
     <script src="./script/script.js" charset="utf-8"></script>
-    <h1 class="neonBorder" onclick="rollDice();">Start Guessing!</h1>
+    <h1 class="neonBorder">Enter your guessing!</h1>
     <div class="grid-container">
         <div class="grid-item">
             <h2> Player 1 </h2>
@@ -19,7 +19,8 @@
             <img src="./images/dice-face-one.png" alt="dice2" class="dice-img" id="dice2">
         </div>
     </div>
-
-    <button class="neonBorder">Start!</button>
+    <label for="guess"> Enter the player # you guess to win (1 or 2 or 3 for draw): </label> <br>
+    <input type="number" id="guess" min="1" max="2">
+    <button class="neonBorder" onclick="rollDice();">Start!</button>
 </body>
 </html>
