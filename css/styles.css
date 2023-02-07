@@ -8,6 +8,7 @@ body{
     text-align: center;
 }
 
+
 .neonBorder:hover {background-color: #323235}
 
 .neonBorder {
@@ -22,6 +23,15 @@ body{
             inset 0 0 0.1rem #99cfe9; 
     color: rgb(230, 240, 243);
     border-radius: 2rem;
+}
+
+select.neonBorder{
+    border-radius: 0%;
+    box-shadow:
+            0 0 2rem #99c6ce,
+            0 0 0.8rem #c4d9dd,
+            0 0 0.1rem #d6e8ec;
+    color: rgb(5, 77, 99);
 }
 
 button.neonBorder{
@@ -48,8 +58,26 @@ button.neonBorder{
     padding: 2% 15%;
 }
 
+.prompt{
+    margin: 2% auto 3%;
+    font-size: 1.5rem;
+    display:inline-flex;
+}
+
 #guess{
-    margin: 1% auto 3%;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0% auto 4%;
+    background-color: black;
+    color: rgb(230, 244, 248);
+    text-shadow: 0 0 .2rem #48c9e9,
+        0 0 0.1rem #99c6ce,
+        0 0 0.1rem #c4d9dd,
+        0 0 0.1rem #d6e8ec;
+}
+
+.isHidden{
+    display: none;
 }
 
 /* .grid-item{

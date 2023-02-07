@@ -1,6 +1,3 @@
-var diceProb1 = [1, 1, 1, 1, 1, 1]
-var diceProb2 = [1, 1, 1, 1, 1, 1]
-
 var diceImages = ["./images/dice-face-one.png", "./images/dice-face-two.png", "./images/dice-face-three.png", 
     "./images/dice-face-four.png", "./images/dice-face-five.png", "./images/dice-face-six.png"];
 
@@ -27,21 +24,34 @@ function rollDice() {
 
     console.log(document.getElementById("guess").value);
 
+    var result = '1';
     if ( dice1 > dice2 ) {
-        if (document.getElementById("guess").value === '1') document.querySelector("h1.neonBorder").innerHTML = "You are right.";
-        else document.querySelector("h1.neonBorder").innerHTML = "You are wrong."; 
-        document.querySelector("h1.neonBorder").innerHTML += " Player 1 Wins!";
-    }
-    else if ( dice1 < dice2 ) {
-        if (document.getElementById("guess").value === '2') document.querySelector("h1.neonBorder").innerHTML = "You are right.";
-        else document.querySelector("h1.neonBorder").innerHTML = "You are wrong.";
-        document.querySelector("h1.neonBorder").innerHTML += " Player 2 Wins!";
-    }
-    else {
-        if (document.getElementById("guess").value === '3') document.querySelector("h1.neonBorder").innerHTML = "You are right.";
-        else document.querySelector("h1.neonBorder").innerHTML = "You are wrong.";
-        document.querySelector("h1.neonBorder").innerHTML += " It is a draw!";
+        document.querySelector("label").innerHTML = "Player 1 Wins!";
+    } else if ( dice1 < dice2 ) {
+        document.querySelector("label").innerHTML = "Player 2 Wins!";
+        result = '2';
+    } else {
+        document.querySelector("label").innerHTML = "It is a draw!";
+        result = '3';
     }
 
+    if ( document.getElementById("guess").value === result )
+        document.querySelector("h1.neonBorder").innerHTML = "You won the game!";
+    else 
+        document.querySelector("h1.neonBorder").innerHTML = "Booo, you lost!";
+    
+    document.querySelector("button.start").classList.toggle("isHidden");
+    document.querySelector("select").classList.toggle("isHidden");
+    document.querySelector("button.restart").classList.toggle("isHidden");
+}
+
+
+function reset() {
+    document.querySelector("h1.neonBorder").innerHTML = "Will you win this game?";
+    document.querySelector("label").innerHTML = "Make your guess using the dropdown below";
+
+    document.querySelector("button.start").classList.toggle("isHidden");
+    document.querySelector("select").classList.toggle("isHidden");
+    document.querySelector("button.restart").classList.toggle("isHidden");
 }
 
