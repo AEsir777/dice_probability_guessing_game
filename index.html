@@ -12,11 +12,11 @@
     <div class="grid-container">
         <div class="grid-item">
             <h2> Player 1 </h2>
-            <img src="./images/dice-face-one.png" alt="dice1" class="dice-img" id="dice1">
+            <img src="./images/dice-face-one.png" alt="diceRes1" class="dice-img" id="diceRes1">
         </div>
         <div class="grid-item">
             <h2> Player 2 </h2>
-            <img src="./images/dice-face-one.png" alt="dice2" class="dice-img" id="dice2">
+            <img src="./images/dice-face-one.png" alt="diceRes2" class="dice-img" id="diceRes2">
         </div>
     </div>
     <label for="#guess" class="prompt"> Make your guess using the dropdown below! </label> <br>
@@ -25,7 +25,7 @@
         <option value="2">Player 2 will win</option>
         <option value="3">Unfortunately, it'a draw</option>
       </select>
-    <button class="neonBorder start" onclick="rollDice();">Start!</button>
-    <button class="neonBorder restart isHidden" onclick="reset();">Restart</button>
+    <button class="neonBorder start" onclick="startGame();">Start!</button>
+    <button class="neonBorder reset" onclick="reset();">Reset</button>
 </body>
 </html>
