@@ -3,9 +3,9 @@
 - [ ] input for biases
 - [ ] metrics for randomnize biases
 - [ ] Tips for calculate expected values
-- [ X ] guessing feature
+- [X] guessing feature
 
 Updates:
-- [ ] optimize guessing code
+- [X] optimize guessing code
 
-![image](https://user-images.githubusercontent.com/77596290/216781104-38dd5cbb-ea15-4760-b3a8-31ec10de0cfb.png)
+![image](https://user-images.githubusercontent.com/77596290/217139521-899054f5-855e-43b0-a6db-3901de99e4c8.png)
