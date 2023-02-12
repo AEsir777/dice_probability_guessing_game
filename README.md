@@ -7,5 +7,6 @@
 
 Updates:
 - [X] optimize guessing code
+- [ ] responsive if have time
 
 ![image](https://user-images.githubusercontent.com/77596290/217139521-899054f5-855e-43b0-a6db-3901de99e4c8.png)
