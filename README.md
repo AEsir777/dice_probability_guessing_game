@@ -1,8 +1,8 @@
 ## dice_probability_guessing_game
 ### Checklist for to do
-- [ ] input for biases
-- [ ] metrics for randomnize biases
-- [ ] Tips for calculate expected values
+- [X] input for biases
+- [X] metrics for randomnize biases
+- [X] Tips for calculate expected values
 - [X] guessing feature
 
 Updates:

@@ -7,7 +7,23 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+    <div id="probModal" class="modal">
+        <div class="modal-content">
+          <h3>Enter the probability for each dice and each face:</h3>
+          <p> Only the ratio of the probability is needed, i.e no need to add up to 1 </p>
+          <div class="grid-container">
+            <div class="grid-item">
+                <p> Prob for dice of Player 1 </p>
+            </div>
+            <div class="grid-item">
+                <p> Prob for dice of Player 2 </p>
+            </div>
+          </div>
+          <button class="neonBorder" id="save" onclick="saveSettings()"> Save Settings </button>
+        </div>
+    </div>
     <script src="./script/script.js" charset="utf-8"></script>
+    
     <h1 id="title" class="neonBorder">Will you win the guessing game?</h1>
     <div class="grid-container">
         <div class="grid-item">
@@ -26,6 +42,11 @@
         <option value="3">Unfortunately, it'a draw</option>
       </select>
     <button class="neonBorder start" onclick="startGame();">Start!</button>
+    
     <button class="neonBorder reset" onclick="reset();">Reset</button>
+    <button class="neonBorder tips" onclick="showTips();">Tips</button>
+    <span class="tooltiptext hidden neonBorder"> text </span>
+    
+    
 </body>
 </html>

@@ -11,8 +11,7 @@ body{
     margin: 0;
 }
 
-
-.neonBorder:hover {background-color: #323235}
+button.neonBorder:hover {background-color: #323235}
 
 .neonBorder {
     margin: 4rem 10rem;
@@ -56,7 +55,6 @@ button.neonBorder{
 
 .grid-container{
     display: grid;
-    height: 30rem;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -85,12 +83,73 @@ button.neonBorder{
 }
 
 button.reset {
-    position: absolute;
-    left: 30%;
-    max-width: fit-content;
-    top: 80%;
+    margin: auto;
+    position: relative;
+    left: 40%;
+    min-width: fit-content;
+    width: 10%;
 }
 
+button.tips {
+    margin: auto;
+    position: relative;
+    right: 40%;
+    min-width: fit-content;
+    width: 10%;
+}
+
+/* model */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding: 10rem 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: transparent;
+    margin: auto;
+    width: 70%;
+}
+
+.probInput{
+    background-color: transparent;
+    border: 0.01rem solid #72e9e9;
+    box-shadow:
+            0 0 2rem #99c6ce,
+            0 0 0.8rem #c4d9dd,
+            0 0 0.1rem #d6e8ec;
+    color: rgb(230, 244, 248);
+    text-shadow: 0 0 .2rem #48c9e9,
+        0 0 0.1rem #99c6ce,
+        0 0 0.1rem #c4d9dd,
+        0 0 0.1rem #d6e8ec;
+    margin: 2% auto;
+    width: 5rem;
+}
+
+#save {
+    margin: 0% auto;
+    width: fit-content;
+}
+
+.tooltiptext {
+    position: absolute;
+    width: fit-content;
+    z-index: 1;
+    border-radius: 6px;
+    margin: 0;
+    bottom: 5%;
+    left: 8%;
+}
+
+.hidden {
+    visibility: hidden;
+}
 
 /* .grid-item{
     display: inline-flex;
