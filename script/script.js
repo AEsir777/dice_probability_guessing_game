@@ -50,13 +50,12 @@ var dice2 = new Dice();
 function saveSettings() {
     let probs = [];
     document.querySelectorAll('.probInput').forEach((ele) => {
-        
         probs.push(parseFloat(ele.value));
     })
     dice1 = new Dice(probs.slice(0, 6));
     dice2 = new Dice(probs.slice(6, 12));
 
-    document.getElementById("probModal").style.display = "None";
+    $("#probModal").css("display", "None");
 
     let exp1 = 0, exp2 = 0, total = 0;
     probs.slice(0, 6).forEach((prob, index) => {
@@ -71,9 +70,8 @@ function saveSettings() {
     });
     exp2 = exp2 / total;
 
-    let tooltip = document.querySelector(".tooltiptext");
-    tooltip.innerHTML = "expected value of the dice1's roll = " + exp1 + "<br>" +
-                        "expected value of the dice2's roll = " + exp2;
+    $(".tooltiptext").html("expected value of the dice1's roll = " + exp1 + "<br>" +
+                            "expected value of the dice2's roll = " + exp2);
 }
 
 // input prompt for dice probability
