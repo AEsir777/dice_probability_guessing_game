@@ -16,6 +16,11 @@
 ### Can reset by clicking on reset
 ![image](https://user-images.githubusercontent.com/77596290/219989565-eb402b47-db69-4f2e-ac54-af370d9a10f1.png)
 
+#### non-functional: responsive
+![image](https://user-images.githubusercontent.com/77596290/219989674-e5f48e67-9331-4558-bf45-226ba3e03d7c.png)
+![image](https://user-images.githubusercontent.com/77596290/219989693-58656f7e-3f76-46d5-9121-ac5febab23a6.png)
+
+
 
 
 
