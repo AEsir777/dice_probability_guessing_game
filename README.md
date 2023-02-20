@@ -1,19 +1,20 @@
 ## dice_probability_guessing_game
 ### Input the probability for two dices
 - Just need to enter the proportionality so all the probs do not need to add up to 1
-![image](https://user-images.githubusercontent.com/77596290/218332468-90b891db-8b4a-4456-b531-62b1e4b37b1f.png)
+![image](https://user-images.githubusercontent.com/77596290/219988871-8d350fe7-b597-487d-a560-84d1e244d659.png)
 
 ### Make guesses
 ![image](https://user-images.githubusercontent.com/77596290/218332482-37c1e719-cc49-45a7-8fa3-416fe6f94b7e.png)
 
 ### Click on guess to see the results
-![image](https://user-images.githubusercontent.com/77596290/218332534-afd855cd-0eb2-42c9-8aa2-3758ead1378a.png)
+![image](https://user-images.githubusercontent.com/77596290/219989539-3a09cb1c-642d-420e-83fc-c02df98c3317.png)
 
 ### There are tips provided to help guessing based on statiscal probability
-![image](https://user-images.githubusercontent.com/77596290/218332563-7b0e0b43-781a-45ac-9ee5-25f9a258aa86.png)
+![image](https://user-images.githubusercontent.com/77596290/219989503-c2c4689c-266e-4ee0-b3be-ae8916ffa89f.png)
+![image](https://user-images.githubusercontent.com/77596290/219989521-95f59423-ceb9-4f5b-aca7-10102bdf516c.png)
 
 ### Can reset by clicking on reset
-![image](https://user-images.githubusercontent.com/77596290/218332577-aec9dd8d-806a-4f69-bcd7-093593f69843.png)
+![image](https://user-images.githubusercontent.com/77596290/219989565-eb402b47-db69-4f2e-ac54-af370d9a10f1.png)
 
 
 
