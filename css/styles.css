@@ -161,12 +161,19 @@ button.tips {
     color: rgb(148, 222, 243);
 }
 
+#calc-container{
+    margin: 0% auto 0%;
+    width: fit-content;
+}
+
 #tip-header{
     padding-top: 2.5rem;
 }
 
 .tip{
     text-align: left;
+    width: fit-content;
+    margin: 0% auto 0%;
 }
 
 #show-ans:hover {
