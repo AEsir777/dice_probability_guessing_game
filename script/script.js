@@ -1,9 +1,10 @@
 var diceImages = ["./images/dice-face-one.png", "./images/dice-face-two.png", "./images/dice-face-three.png", 
     "./images/dice-face-four.png", "./images/dice-face-five.png", "./images/dice-face-six.png"];
 
+// operations regards to the element
 const renderModal = () => {
     for ( let i = 0; i < 2; i++ ) {
-        const gridItem = document.querySelectorAll("#probModal div.grid-item")[i];
+        const gridItem = $("#probModal div.grid-item")[i];
         for ( let j = 0; j < 6; j++ ) {
             let id = "dice_" + i + "_" + j;
 
@@ -32,6 +33,7 @@ renderModal();
 class Dice {
     constructor(probs = [1, 1, 1, 1, 1, 1]) {
         this.probs = probs.map((sum => value => sum += value)(0));
+        this.total = this.probs[5];
     }
 
     rollDice() {
@@ -42,6 +44,19 @@ class Dice {
         }
         return 5;
     }
+
+    cdf(i) {
+        return this.probs[i] / this.total;
+    }
+
+    tdf(i) {
+        return 1 - this.probs[i] / this.total;
+    }
+
+    pmf(i) {
+        if ( i== 0 ) return this.probs[0] / this.total;
+        return (this.probs[i] - this.probs[i - 1]) / this.total;
+    }
 }
 
 var dice1 = new Dice();
@@ -49,29 +64,27 @@ var dice2 = new Dice();
 
 function saveSettings() {
     let probs = [];
-    document.querySelectorAll('.probInput').forEach((ele) => {
-        probs.push(parseFloat(ele.value));
-    })
+    $('.probInput').each(function() {
+        probs.push(parseFloat($(this).val()));
+    });
     dice1 = new Dice(probs.slice(0, 6));
     dice2 = new Dice(probs.slice(6, 12));
 
     $("#probModal").css("display", "None");
 
-    let exp1 = 0, exp2 = 0, total = 0;
-    probs.slice(0, 6).forEach((prob, index) => {
-        exp1 += prob * (index + 1);
-        total += prob;
-    });
-    exp1 = exp1 / total;
+    ans = dice1.tdf(0) * dice2.pmf(0) +  dice1.tdf(2) * dice2.pmf(2) + dice1.tdf(3) * dice2.pmf(3) +
+        dice1.tdf(4) * dice2.pmf(4);
+    ans2 = dice1.pmf(0) * dice2.pmf(0) +  dice1.pmf(2) * dice2.pmf(2) + dice1.pmf(3) * dice2.pmf(3) +
+        dice1.pmf(4) * dice2.pmf(4) + dice1.pmf(5) * dice2.pmf(5);
+    
 
-    probs.slice(0, 6).forEach((prob, index) => {
-        exp2 += prob * (index + 1);
-        total += prob;
-    });
-    exp2 = exp2 / total;
-
-    $(".tooltiptext").html("expected value of the dice1's roll = " + exp1 + "<br>" +
-                            "expected value of the dice2's roll = " + exp2);
+    $("#middle").html("= " + dice1.tdf(0).toFixed(2) + " &times; " + dice2.pmf(0).toFixed(2) + " + " +
+        dice1.tdf(1).toFixed(2) + " &times; " + dice2.pmf(1).toFixed(2) + " + " +
+        dice1.tdf(2).toFixed(2) + " &times; " + dice2.pmf(2).toFixed(2) + " + " +
+        dice1.tdf(3).toFixed(2) + " &times; " + dice2.pmf(3).toFixed(2) + " + " +
+        dice1.tdf(4).toFixed(2) + " &times; " + dice2.pmf(4).toFixed(2));
+    $("#final").html("= " + ans.toFixed(2));
+    $("#equal-ans").html("P(X = Y) = " + ans2.toFixed(2));
 }
 
 // input prompt for dice probability
@@ -84,7 +97,7 @@ function saveSettings() {
 
 // function for clicking on start guessing
 function startGame() {
-    if ( document.getElementById("guess").value === '' ) {
+    if ( $("#guess").value === '' ) {
         alert("Please enter the guess!");
         return;
     }
@@ -92,35 +105,49 @@ function startGame() {
     const diceRes1 = dice1.rollDice();
     const diceRes2 = dice2.rollDice();
 
-    document.getElementById("diceRes1").setAttribute("src", diceImages[diceRes1]);
-    document.getElementById("diceRes2").setAttribute("src", diceImages[diceRes2]);
+    $("#diceRes1").attr("src", diceImages[diceRes1]);
+    $("#diceRes2").attr("src", diceImages[diceRes2]);
 
-    console.log(document.getElementById("guess").value);
+    console.log($("#guess").val());
 
     var result = '1';
     if ( diceRes1 > diceRes2 ) {
-        document.querySelector("label").innerHTML = "Player 1 Wins!";
+        $("label").text("Player 1 Wins!");
     } else if ( diceRes1 < diceRes2 ) {
-        document.querySelector("label").innerHTML = "Player 2 Wins!";
+        $("label").text("Player 2 Wins!");
         result = '2';
     } else {
-        document.querySelector("label").innerHTML = "It is a draw!";
+        $("label").text("It is a draw!");
         result = '3';
     }
 
-    if ( document.getElementById("guess").value === result )
-        document.querySelector("h1.neonBorder").innerHTML = "You won the game!";
+    if ( $("#guess").val() === result )
+        $("h1.neonBorder").text("You won the game!");
     else 
-        document.querySelector("h1.neonBorder").innerHTML = "Booo, you lost!";
+        $("h1.neonBorder").text("Booo, you lost!");
     
-    document.querySelector("button.start").innerHTML = "Guess again?"
+    $("button.start").text("Guess again?");
 }
 
-function showTips() {
-    document.querySelector(".tooltiptext").classList.toggle("hidden");
+function toggleTips() {
+    $("#tipModal").toggleClass("hidden");
+    $("#show-ans").removeClass("hidden");
+    $("#equal-ans").addClass("hidden");
 }
 
+function equalProb() {
+    $("#show-ans").addClass("hidden");
+    $("#equal-ans").removeClass("hidden");
+}
+ 
 function reset() {
     window.location.reload();
 }
+
+// add event listeners
+$("button.start").on("click", startGame);
+$("button.reset").on("click", reset);
+$("button.tips").on("click", toggleTips);
+$("#close").on("click", toggleTips);
+$("#show-ans").on("click", equalProb);
 

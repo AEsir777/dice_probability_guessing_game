@@ -26,5 +26,7 @@
 
 Updates:
 - [X] optimize guessing code
-- [ ] responsive if have time
+- [X] responsive if have time
+- [X] changed tips to modal
+- [X] added P(X > Y) calculation
 

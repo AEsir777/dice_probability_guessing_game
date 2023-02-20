@@ -22,6 +22,24 @@
           <button class="neonBorder" id="save" onclick="saveSettings()"> Save Settings </button>
         </div>
     </div>
+
+    <div id="tipModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <h3 id="tip-header"> Follow the tips to increase your chance of winning! </h3>
+            <p> Let X be the outcome of player 1 and Y be the outcome of player 2. </p>
+            <p class="tip"> P (X > Y) = P(X > 1)P(Y = 1) + P(X > 2)P(Y = 2) +  P(X > 3)P(Y = 3) + P(X > 4)P(Y = 4) + P(X > 5)P(Y = 5) <br>
+                <span class="hidden">P (X > Y)</span> <span id="middle">a</span> <br>
+                <span class="hidden">P (X > Y)</span> <span id="final">a</span> <br>
+            </p>
+
+            <p> 
+                Then how do you calculate P(X = Y)? <br>
+                <span id="show-ans"> click here for answer </span> <Br>
+                <span id="equal-ans" class="hidden">a</span> 
+            </p>
+        </div>
+    </div>
     
     <h1 id="title" class="neonBorder">Will you win the guessing game?</h1>
     <div class="grid-container">
@@ -34,17 +52,16 @@
             <img src="./images/dice-face-one.png" alt="diceRes2" class="dice-img" id="diceRes2">
         </div>
     </div>
-    <label for="#guess" class="prompt"> Make your guess using the dropdown below! </label> <br>
+    <label for="#guess" class="prompt"> Make your guess which player will get larger outcome using the dropdown below! </label> <br>
     <select aria-label="select guessing" class="neonBorder game-done" id="guess">
         <option value="1" selected>Player 1 will win</option>
         <option value="2">Player 2 will win</option>
         <option value="3">Unfortunately, it'a draw</option>
       </select>
-    <button class="neonBorder start" onclick="startGame();">Start!</button>
+    <button class="neonBorder start">Start!</button>
     
-    <button class="neonBorder reset" onclick="reset();">Reset</button>
-    <button class="neonBorder tips" onclick="showTips();">Tips</button>
-    <span class="tooltiptext hidden neonBorder"> text </span>
+    <button class="neonBorder reset">Reset</button>
+    <button class="neonBorder tips">Tips</button>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="./script/script.js" charset="utf-8"></script>

@@ -151,6 +151,29 @@ button.tips {
     visibility: hidden;
 }
 
+#close {
+    position: absolute;
+    font-size: 2rem;
+}
+
+#close:hover {
+    font-size: 3rem;
+    color: rgb(148, 222, 243);
+}
+
+#tip-header{
+    padding-top: 2.5rem;
+}
+
+.tip{
+    text-align: left;
+}
+
+#show-ans:hover {
+    font-size: 1.2rem;
+    color: rgb(148, 222, 243);
+}
+
 /* .grid-item{
     display: inline-flex;
 }
